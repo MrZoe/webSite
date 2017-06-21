@@ -271,7 +271,7 @@ const musicTimeEvent = () => {
     const TimeSpan = e('#id-span-time')
     audio.addEventListener('timeupdate', () => {
         // 获取到 audio 的现在时间和总时间， 只保留到小数点后两位
-        let totalTime = timeInit(audio.duration)
+        let totalTime = timeInit(audio.duration) || 0
         let nowTime = timeInit(audio.currentTime)
         const time = `${nowTime} / ${totalTime}`
         TimeSpan.innerHTML = time
